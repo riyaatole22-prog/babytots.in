@@ -1,0 +1,746 @@
+/* ================= GLOBAL ================= */
+html {
+  scroll-behavior: smooth;
+}
+
+.app.night {
+  background: linear-gradient(
+    180deg,
+    #0f1024 0%,
+    #15173a 50%,
+    #1d1f4d 100%
+  );
+  color: #e8eaff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(
+    180deg,
+    #f9edf3 0%,
+    #f6e3ee 50%,
+    #f3ddea 100%
+  );
+}
+
+
+/* ================= HERO ================= */
+.app.night .overlay {
+  background: rgba(10, 5, 25, 0.65);
+  backdrop-filter: brightness(0.5) saturate(0.8);
+}
+
+.app.night .hero-content h1,
+.app.night .hero-content p {
+  color: #ffffff;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.7);
+}
+
+.app.night .cta {
+  background: #ffb3da;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background: url("Bright and playful kindergarten playground.png") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: 0.6s ease;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  transition: 0.6s ease;
+  pointer-events: none;
+}
+
+/* Day */
+.day .overlay {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: brightness(1) saturate(1);
+}
+
+/* Night */
+.night .overlay {
+  background: rgba(15, 5, 30, 0.55);
+  backdrop-filter: brightness(0.55) saturate(0.85);
+}
+
+/* Warm glow */
+.warm-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: 0.6s ease;
+  mix-blend-mode: screen;
+}
+
+.day .warm-glow {
+  background: transparent;
+}
+
+.night .warm-glow {
+  background: radial-gradient(
+    circle at 88% 28%,
+    rgba(255, 210, 140, 0.45) 0%,
+    rgba(255, 180, 90, 0.35) 15%,
+    rgba(255, 150, 70, 0.15) 35%,
+    transparent 55%
+  );
+}
+
+/* Lamp click area */
+.lamp-click {
+  position: absolute;
+  right: 110px;
+  top: 170px;
+  width: 220px;
+  height: 220px;
+  cursor: pointer;
+  z-index: 6;
+}
+
+/* Lamp pulse */
+.night .lamp-click::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 200, 120, 0.4),
+    transparent 70%
+  );
+  animation: lampPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes lampPulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0.4; }
+}
+
+/* Hero text */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+/* CTA */
+.cta {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #ff9ecf;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+}
+
+.night .cta {
+  background: #ffb3da;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 90px 20px;
+  text-align: center;
+  transition: 0.5s ease;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section h2 {
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+.section p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* About */
+/* ================= ABOUT SECTION ================= */
+.app.night .about {
+  background: linear-gradient(
+    180deg,
+    #1b1d45 0%,
+    #242766 100%
+  );
+}
+
+.app.night .about-title,
+.app.night .about-card h3 {
+  color: #ffd6f1;
+}
+
+.app.night .about-sub,
+.app.night .about-card p {
+  color: #d6d8ff;
+}
+
+.app.night .about-card {
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+
+.about {
+  background: linear-gradient(
+    180deg,
+    #fff6fb 0%,
+    #ffeaf5 100%
+  );
+  position: relative;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #7a1e48;
+  font-weight: 700;
+}
+
+.about-sub {
+  max-width: 650px;
+  margin: 0 auto 60px auto;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Cards */
+.about-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 40px 30px;
+  box-shadow: 0 15px 40px rgba(255, 150, 200, 0.15);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(255, 120, 180, 0.25);
+}
+
+/* Floating effect */
+.about-card:nth-child(1) {
+  animation: float 5s ease-in-out infinite;
+}
+.about-card:nth-child(2) {
+  animation: float 6s ease-in-out infinite;
+}
+.about-card:nth-child(3) {
+  animation: float 5.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Icon */
+.icon {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+/* Card Text */
+.about-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #7a1e48;
+}
+
+.about-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ================= NIGHT MODE SUPPORT ================= */
+
+.night-mode .about {
+  background: linear-gradient(
+    180deg,
+    #1c1d3b 0%,
+    #23245a 100%
+  );
+}
+
+.night-mode .about-title,
+.night-mode .about-card h3 {
+  color: #ffd1ea;
+}
+
+.night-mode .about-sub,
+.night-mode .about-card p {
+  color: #ddd;
+}
+
+.night-mode .about-card {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-sub {
+    font-size: 1rem;
+  }
+
+  .about-card {
+    padding: 30px 20px;
+  }
+}
+
+/* Gallery */
+/* ===== GALLERY SECTION ===== */
+.gallery-card {
+  border-radius: 25px;
+  overflow: hidden;
+  background: #f6cfe0;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+  aspect-ratio: 4 / 3;   /* keeps all cards same proportion */
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* crops instead of stretching */
+  display: block;
+}
+
+
+.app.night .gallery-section {
+  background: #17183b;
+}
+
+.app.night .gallery-section h2 {
+  color: #ffd6f1;
+}
+
+.app.night .gallery-card {
+  background: #25275a;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.gallery-section {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+/* Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Card */
+.gallery-card {
+  border-radius: 25px;
+  overflow: hidden;
+  background: #f6cfe0;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+}
+
+
+
+/* Hover Effect */
+.gallery-card:hover {
+  transform: translateY(-10px);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card img {
+    height: 220px;
+  }
+}
+
+/* ===== VISIT SECTION ===== */
+.app.night .visit-container {
+  background: #1f214d;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.app.night .visit-left h3,
+.app.night .visit-right h3 {
+  color: #ffd6f1;
+}
+
+.app.night .visit-left p,
+.app.night .visit-right p {
+  color: #d6d8ff;
+}
+
+.app.night .map-btn {
+  background: #ffb3da;
+}
+
+.visit-section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container */
+.visit-container {
+  max-width: 1200px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 50px 60px;
+  display: flex;
+  gap: 60px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+.visit-left h3,
+.visit-right h3 {
+  font-size: 1.6rem;
+  color: #8b1c3d;
+  margin-bottom: 20px;
+}
+
+/* Paragraph */
+.visit-left p,
+.visit-right p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Google Maps Button */
+.map-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff9ecf;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.map-btn:hover {
+  transform: scale(1.05);
+}
+/* ===== CONTACT SECTION ===== */
+.app.night .contact-card,
+.app.night .contact-form-card {
+  background: #1f214d;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.app.night .contact-card h3,
+.app.night .contact-form-card h3 {
+  color: #ffd6f1;
+}
+
+.app.night .contact-card p {
+  color: #d6d8ff;
+}
+
+.app.night .contact-link {
+  color: #ffb3da;
+}
+
+.app.night .contact-form-card input,
+.app.night .contact-form-card textarea {
+  background: #2b2e6a;
+  border: 2px solid #3c3f8a;
+  color: #ffffff;
+}
+
+.app.night .contact-form-card input::placeholder,
+.app.night .contact-form-card textarea::placeholder {
+  color: #c5c7ff;
+}
+
+.app.night .contact-form-card input:focus,
+.app.night .contact-form-card textarea:focus {
+  border-color: #ffb3da;
+}
+
+.contact-section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 40px;
+}
+
+/* LEFT SIDE */
+.contact-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+  transition: 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card h3 {
+  color: #8b1c3d;
+  margin-bottom: 15px;
+}
+
+.contact-card p {
+  color: #444;
+  line-height: 1.6;
+}
+
+.contact-link {
+  display: inline-block;
+  font-weight: 600;
+  color: #ff4fa3;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT SIDE */
+.contact-form-card {
+  flex: 1;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+}
+
+.contact-form-card h3 {
+  margin-bottom: 25px;
+  color: #8b1c3d;
+}
+
+/* FORM */
+.contact-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+  padding: 14px 18px;
+  border-radius: 15px;
+  border: 2px solid #ffd6ea;
+  outline: none;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+  border-color: #ff9ecf;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.04);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-form-card {
+    padding: 30px;
+  }
+}
+
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .visit-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 30px;
+  }
+}
+
+
+/* Enquiry */
+.enquiry {
+  background: #fff6fb;
+}
+
+/* Footer */
+/* ===== FOOTER ===== */
+.app.night .footer {
+  background: linear-gradient(
+    135deg,
+    #1c1f4d,
+    #242766
+  );
+}
+
+.app.night .footer-brand h3 {
+  color: #ffd6f1;
+}
+
+.app.night .footer-brand p,
+.app.night .footer-copy {
+  color: #d6d8ff;
+}
+
+.app.night .footer-divider {
+  background: #ffb3da;
+}
+
+.footer {
+  margin-top: 100px;
+  padding: 80px 8% 40px;
+  background: linear-gradient(135deg, #f6d6e6, #fce4f2);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Brand */
+.footer-brand h3 {
+  font-size: 2rem;
+  color: #8c1c4a;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+/* Divider */
+.footer-divider {
+  width: 80px;
+  height: 3px;
+  background: #ff9ecf;
+  margin: 0 auto 30px;
+  border-radius: 10px;
+}
+
+/* Copyright */
+.footer-copy {
+  font-size: 0.95rem;
+  color: #777;
+}
