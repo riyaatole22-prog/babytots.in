@@ -74,6 +74,7 @@ body {
   pointer-events: none;
   transition: 0.6s ease;
   mix-blend-mode: screen;
+   
 }
 
 .day .warm-glow {
@@ -93,12 +94,19 @@ body {
 /* Lamp click area */
 .lamp-click {
   position: absolute;
-  right: 110px;
-  top: 170px;
-  width: 220px;
-  height: 220px;
+  top: 22%;
+  right: 8%;
+  width: 18%;
+  aspect-ratio: 1 / 1;
   cursor: pointer;
-  z-index: 6;
+  z-index: 10;
+}
+@media (max-width: 768px) {
+  .lamp-click {
+    top: 18%;
+    right: 5%;
+    width: 28%;
+  }
 }
 
 /* Lamp pulse effect */
