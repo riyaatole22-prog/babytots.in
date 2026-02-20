@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BabyTots Day Care</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app" class="app day">
+
+  <!-- ================= HERO ================= -->
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="warm-glow"></div>
+
+    <div class="lamp-click" onclick="toggleTheme()"></div>
+
+    <div class="hero-content">
+      <h1>BabyTots Day Care</h1>
+      <p>Where tiny dreams grow big ✨</p>
+      <a href="#enquiry" class="cta">Enroll Now</a>
+    </div>
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about section">
+    <div class="container">
+      <h2 class="about-title">
+        About Baby Tots <span class="rainbow">🌈</span>
+      </h2>
+
+      <p class="about-sub">
+        A nurturing haven where your little ones learn, play, and grow
+        in a joyful and secure environment.
+      </p>
+
+      <div class="about-grid">
+
+        <div class="about-card">
+          <div class="icon">💗</div>
+          <h3>Loving Care</h3>
+          <p>
+            Every child receives personalized attention with warmth,
+            patience, and emotional support.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="icon">🛡️</div>
+          <h3>Safe Environment</h3>
+          <p>
+            Secure facilities, trained caregivers, and constant supervision
+            ensure complete peace of mind.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="icon">✨</div>
+          <h3>Fun Learning</h3>
+          <p>
+            Play-based activities designed to boost creativity,
+            confidence, and developmental growth.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="gallery-section">
+    <h2>Our Happy Moments</h2>
+
+    <div class="gallery-grid">
+      <div class="gallery-card"><img src="dc10.jpeg" alt="" /></div>
+      <div class="gallery-card"><img src="dc11.jpeg" alt="" /></div>
+      <div class="gallery-card"><img src="dc12.jpeg" alt="" /></div>
+      <div class="gallery-card"><img src="dc13.jpeg" alt="" /></div>
+      <div class="gallery-card"><img src="dc18.jpeg" alt="" /></div>
+      <div class="gallery-card"><img src="dc19.jpeg" alt="" /></div>
+    </div>
+  </section>
+
+  <!-- ================= VISIT ================= -->
+  <section class="visit-section">
+    <div class="visit-container">
+
+      <div class="visit-left">
+        <h3>📍 Visit Us</h3>
+
+        <p>
+          Purandare Colony, Yashada B 102, Syndicate,
+          Murbad Road, Kalyan West – 421301
+        </p>
+
+        <a href="https://maps.app.goo.gl/nSDiBGVxjjJBbzt46"
+           target="_blank"
+           class="map-btn">
+          Open in Google Maps
+        </a>
+      </div>
+
+      <div class="visit-right">
+        <h3>Your Child, Our Responsibility</h3>
+        <p>
+          We are committed to providing a nurturing, stimulating,
+          and secure environment where your little one can thrive.
+          Our caregivers treat each child with love, fostering growth,
+          curiosity, and happiness every single day.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="enquiry" class="contact-section">
+
+    <div class="contact-container">
+
+      <div class="contact-left">
+
+        <div class="contact-card">
+          <h3>📞 Call Us</h3>
+          <a href="tel:+919021633489" class="contact-link">
+            +91 9021633489
+          </a>
+          <p>Tap to call directly.</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>📸 Follow Us</h3>
+          <a href="https://instagram.com/babytots012"
+             target="_blank"
+             class="contact-link">
+            @babytots012 👉
+          </a>
+          <p>See our daily adventures on Instagram!</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>⏰ Opening Hours</h3>
+          <p>Monday – Saturday: 8:30 AM – 7:30 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+
+      </div>
+
+      <div class="contact-form-card">
+        <h3>Enquiry Form ✨</h3>
+
+        <form onsubmit="sendWhatsApp(event)">
+          <input name="name" type="text" placeholder="Your name" required />
+          <input name="address" type="text" placeholder="Your address" required />
+          <input name="phone" type="tel" placeholder="Your phone number" required />
+          <textarea name="message" placeholder="Message" rows="4" required></textarea>
+
+          <button type="submit" class="whatsapp-btn">
+            💬 Send Enquiry on WhatsApp
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>BabyTots Day Care</h3>
+        <p>Where tiny dreams grow big ✨</p>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-copy">
+        © 2026 BabyTots Day Care. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  function toggleTheme() {
+    const app = document.getElementById("app");
+    app.classList.toggle("night");
+    app.classList.toggle("day");
+  }
+
+  function sendWhatsApp(e) {
+    e.preventDefault();
+
+    const name = e.target.name.value;
+    const address = e.target.address.value;
+    const phone = e.target.phone.value;
+    const message = e.target.message.value;
+
+    const whatsappMessage =
+      `Hello BabyTots Day Care,%0A%0A` +
+      `Name: ${name}%0A` +
+      `Address: ${address}%0A` +
+      `Phone: ${phone}%0A` +
+      `Message: ${message}`;
+
+    window.open(
+      `https://wa.me/919021633489?text=${whatsappMessage}`,
+      "_blank"
+    );
+  }
+</script>
+
+</body>
+</html>
